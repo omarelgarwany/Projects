@@ -39,7 +39,7 @@ def compute_error(attempted_classes, correct_classes):
 def svm_poly_kernel(X, Y, C=1, degree=2):
 	"""
 	This function implements the a polynomial kernel that will be used later to implement the SVM algorithm.
-	It utilizes a quadratic programming package to find the value of the kernel function.
+	It utilizes a quadratic programming package to find the value of the kernel function (polynomial kernel).
 
 	According to documentation this package solves:
 	Minimize 1/2 x^T G x - a^T x
