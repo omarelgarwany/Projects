@@ -11,6 +11,9 @@ class Node:
     def __str__(self):
         return str(self.key)
 class Tree:
+    """
+    This class implements the binary tree data structure along with operations on it
+    """
     def __init__(self, root, l_child=None, r_child=None):
         self.root = root
         self.parent = None
