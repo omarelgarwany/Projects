@@ -2,7 +2,7 @@
 #include <stack>
 #include <string>
 
-//This program solves the problem of finding whether a group of bracket characters is balanced or not
+//This program solves the problem of finding whether a group of bracket characters is balanced or not by using a stack data structure
 struct Bracket {
     Bracket(char type, int position):
         type(type),

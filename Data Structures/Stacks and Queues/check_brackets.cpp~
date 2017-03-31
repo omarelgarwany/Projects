@@ -2,6 +2,7 @@
 #include <stack>
 #include <string>
 
+//This program solves the problem of finding whether a group of bracket characters is balanced or not
 struct Bracket {
     Bracket(char type, int position):
         type(type),
@@ -55,7 +56,7 @@ int main() {
         }
     }
 
-    // Printing answer, write your code here
+    // Printing answer
     if (opening_brackets_stack.empty()) {
     	std::cout << "Success" << std::endl;
     } else {
