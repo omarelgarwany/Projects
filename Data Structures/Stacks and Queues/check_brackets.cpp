@@ -1,0 +1,69 @@
+#include <iostream>
+#include <stack>
+#include <string>
+
+//This program solves the problem of finding whether a group of bracket characters is balanced or not
+struct Bracket {
+    Bracket(char type, int position):
+        type(type),
+        position(position)
+    {}
+
+    bool Matchc(char c) {
+        if (type == '[' && c == ']')
+            return true;
+        if (type == '{' && c == '}')
+            return true;
+        if (type == '(' && c == ')')
+            return true;
+        return false;
+    }
+
+    char type;
+    int position;
+};
+
+int main() {
+    std::string text;
+    getline(std::cin, text);
+
+    std::stack <Bracket> opening_brackets_stack;
+    for (int position = 0; position < text.length(); ++position) {
+        char next = text[position];
+
+        if (next == '(' || next == '[' || next == '{') {
+            // Process opening bracket
+            Bracket last_opening_brace = {next, position};
+            opening_brackets_stack.push(last_opening_brace);
+        }
+
+        if (next == ')' || next == ']' || next == '}') {
+            // Process closing bracket
+            if (opening_brackets_stack.empty()) {
+	            Bracket last_brace = {next, position};
+	            opening_brackets_stack.push(last_brace);
+            	break;
+            }
+            Bracket last_opening_brace = opening_brackets_stack.top();
+            if (!last_opening_brace.Matchc(next) || opening_brackets_stack.empty()) {
+	            Bracket last_brace = {next, position};
+	            opening_brackets_stack.push(last_brace);
+            	break;
+            } else {
+	            opening_brackets_stack.pop();
+
+            }
+        }
+    }
+
+    // Printing answer
+    if (opening_brackets_stack.empty()) {
+    	std::cout << "Success" << std::endl;
+    } else {
+    	int one_index_position = opening_brackets_stack.top().position + 1;
+    	std::cout << one_index_position << std::endl;
+
+    }
+
+    return 0;
+}
