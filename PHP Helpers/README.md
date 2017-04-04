@@ -1,4 +1,4 @@
-####These are helper classes and functions for common php tasks
+#### These are helper classes and functions for common php tasks
 
 1-**VerificationBox** is a group of related classes that accomplish the job of verifying a user using email verfication and handles all the database and emailing legwork.
 
