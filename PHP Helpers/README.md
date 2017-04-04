@@ -1,4 +1,5 @@
 ###CODE95
+
 1-**VerificationBox** is a group of related classes that accomplish the job of verifying a user using email verfication and handles all the database and emailing legwork.
 
 _Read more_: https://medium.com/@omarbuyazeed/easy-verification-with-laravel-and-verifierclass-dc9be7df8868
